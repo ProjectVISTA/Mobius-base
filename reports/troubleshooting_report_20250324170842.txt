@@ -1,0 +1,26 @@
+Step 1: Enable DTLS -> Answer: Issue still persists
+Step 2: Packet drop check in SSL-VPN daemon -> Answer: drops seen still (Bypassed with reason: skipper) (Command output: 
+iagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsockiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsockiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsockiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsockiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsockiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsockiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsockiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+)

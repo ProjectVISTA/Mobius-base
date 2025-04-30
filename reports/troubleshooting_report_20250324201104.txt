@@ -1,0 +1,49 @@
+Step 1: Enable DTLS -> Answer: Issue still persists
+Step 1: Enable DTLS -> Answer: Issue still persists
+Step 2: Packet drop check in SSL-VPN daemon -> Answer: drops seen still (Bypassed with reason: skipper)
+  Command output: 
+diagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdomdiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdomdiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdomdiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdom
+diagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+
+
+Step 2: Packet drop check in SSL-VPN daemon -> Answer: drops seen still (Bypassed with reason: skipper)
+  Command output: 
+diagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdomdiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdomdiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdomdiagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+    diagnose sys tcpsock
+    fnsysctl ifconfig ssl.root (in case of vdoms replace root with vdom
+diagnose vpn ssl statistics
+    diagnose vpn ssl mux-stat
+    diagnose sys udpsock
+

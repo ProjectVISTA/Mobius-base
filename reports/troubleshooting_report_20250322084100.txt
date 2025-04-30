@@ -1,0 +1,14 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: No
+Step 3: CPU/Memory Check -> Answer: CPU/Memory not high
+Step 5: QOS/DOS Policy Check -> Answer: QOS/DOS Policy not causing slow speeds (Bypassed with reason: FOS version does ot support queing)
+Step 7: Baseline Speed Testing Without VPN -> Answer: Completed -> Inputs: {'PC Download Speed (Mbps)': 12.0, 'PC Upload Speed (Mbps)': 12.0}
+Step 8: iPerf from FortiGate to Server -> Answer: Completed -> Inputs: {'FortiGate Download Speed (Mbps)': 12.0, 'FortiGate Upload Speed (Mbps)': 12.0}
+Step 9: Speed Test through the tunnel -> Answer: Completed -> Inputs: {'SSL-VPN Download Speed (Mbps)': 1.0, 'SSL-VPN Upload Speed (Mbps)': 1.0}
+Step 10: Comparison of speed tests -> Answer: proceed
+Step 12: Enable DTLS -> Answer: Issue still persists
+Step 13: Packet drop check in SSL-VPN daemon -> Answer: No drops seen
+Step 14: pcap analysis -> Answer: Issue Presists
+Step 16: UTM/Proxy disable -> Answer: UTM/proxy not slowing VPN
+Step 17: Disable hw acceleration -> Answer: issue persists
+Step 20: collect pcaps -> Answer: escalate/swarm to senior Engineer

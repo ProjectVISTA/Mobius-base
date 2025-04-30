@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <style>
+        /* Info Box Styles */
+        .info-container {
+            /*position: absolute;*/
+            /*top: 20px;
+            right: 20px;*/
+            width: 50%;
+            margin: 0 auto;
+
+        }
+    
+        .info-button {
+            background-color: #e60012; /* Fortinet Red */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+    
+        .info-content {
+            display: none;
+            background-color: white; /* White background for content */
+            color: #333; /* Dark text for readability */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 14px;
+            text-align: justify;
+        }
+        @media (max-width: 768px) {
+            .info-container {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+      
+
+        select {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 2px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #333;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            transition: border 0.3s ease;
+        }
+
+        select:focus {
+            border-color: #007BFF;
+            outline: none;
+            background-color: #fff;
+        }
+    </style>
+    
+
+    <script>
+        // Function to auto-hide error messages after 3 seconds
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                let alerts = document.querySelectorAll(".alert");
+                alerts.forEach(alert => alert.style.display = "none");
+            }, 3000);
+        });
+
+        // Ensure checkboxes are checked or prompt for bypass reason
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("troubleshoot-form");
+
+            form.addEventListener("submit", function (event) {
+                const checkboxes = document.querySelectorAll(".required-checkbox");
+                let allChecked = true;
+
+                checkboxes.forEach(checkbox => {
+                    if (!checkbox.checked) {
+                        allChecked = false;
+                    }
+                });
+
+                if (!allChecked) {
+                    let bypassReason = prompt("Not all checkboxes are checked. Please provide a reason to bypass:");
+                    if (!bypassReason || bypassReason.trim() === "") {
+                        event.preventDefault();  // Stop form submission
+                        alert("You must provide a bypass reason to proceed.");
+                    } else {
+                        // Add bypass reason to a hidden field
+                        const reasonInput = document.getElementById("bypass_reason");
+                        reasonInput.value = bypassReason;
+                    }
+                }
+                // Check all input fields are filled
+                const inputFields = document.querySelectorAll("input[type='number'], input[type='text']");
+                const selectFields = document.querySelectorAll("select");
+
+                let allFilled = true;
+                let emptyField = null;
+                
+                // Check inputs
+                inputFields.forEach(field => {
+                    if (field.value.trim() === "" && field.id !== "bypass_reason") {
+                        allFilled = false;
+                        if (!emptyField) emptyField = field;
+                    }
+                });
+                
+                // Check dropdowns
+                selectFields.forEach(field => {
+                    if (field.value.trim() === "") {
+                        allFilled = false;
+                        if (!emptyField) emptyField = field;
+                    }
+                });
+
+                if (!allFilled) {
+                    event.preventDefault();
+                    alert("Please fill in all input fields before proceeding.");
+                    if (emptyField) emptyField.focus();
+                    return;
+                }
+
+                const command_output = document.getElementById("textinput1");
+                if (command_output) {
+                    command_output.setAttribute("name", "textinput1"); // Ensure it has a name for form submission
+                }
+            });
+
+            // Toggle info box visibility
+            const infoButton = document.getElementById("info-button");
+            if (infoButton) {
+                infoButton.addEventListener("click", function() {
+                    const infoContent = document.getElementById("info-content");
+                    infoContent.style.display = (infoContent.style.display === "block") ? "none" : "block";
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="page-container">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="http://10.21.3.250:8863" class="logo" target="_blank" title="VISTA Home">🏠 Home</a>
+                <a href="http://10.21.3.250:8000" class="nav-link" target="_blank">📄 Documentation</a>
+            </div>
+        </nav>
+    <div class="container">
+        <h1 class="title">Project Title</h1>
+
+        <!-- Info Button and Box -->
+        {% if info %}
+        <div class="info-container">
+            <button id="info-button" class="info-button">Why am I doing this? ▼</button>
+            <div id="info-content" class="info-content">
+                <p>{{ info | safe }}</p>
+            </div>
+        </div>
+        <br>
+        {% endif %}
+
+        <!-- Display error messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert-container">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form id="troubleshoot-form" method="POST">
+            {% if session["current_step"] == -1 %}
+                <h2 class="complete">Troubleshooting complete.</h2>
+            {% else %}
+                <pre class="question">{{ question | safe }}</pre>
+
+                <!-- Hidden field for bypass reason -->
+                <input type="hidden" name="bypass_reason" id="bypass_reason">
+
+                <!-- Input fields if exist -->
+                {% if input_fields %}
+                    <div class="input-section">
+                        {% for field in input_fields %}
+                            <label for="{{ field }}" class="input-label">{{ field }}:</label>
+                            <input type="number" name="{{ field }}" id="{{ field }}" value="{{ stored_inputs.get(field, '') }}" step="0.01" class="input-box" required>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div class="options">
+                    {% for option in options %}
+                        <button type="submit" name="choice" value="{{ option }}" class="btn-option">{{ option }}</button>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </form>
+
+        <a href="{{ url_for('download_report') }}">
+            <button class="btn download">Download Report</button>
+        </a>
+
+        <form method="POST" class="back-form">
+            <button type="submit" name="action" value="back" class="btn back">Back</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

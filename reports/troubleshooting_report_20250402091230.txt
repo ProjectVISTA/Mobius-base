@@ -1,0 +1,6 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: Yes
+Step 6: Investigate ISP of PC or FortiGate -> Answer: CPU/Memory high
+  Command output: 
+di sys top 2 50
+

@@ -1,0 +1,27 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: No
+Step 3: CPU/Memory Check -> Answer: SSLVPND High
+  Command output: 
+FGT-A # get sys performance status
+CPU states: 17% user 1% system 0% nice 81% idle 0% iowait 0% irq 1% softirq
+CPU0 states: 16% user 3% system 0% nice 80% idle 0% iowait 0% irq 1% softirq
+CPU1 states: 16% user 0% system 0% nice 80% idle 0% iowait 0% irq 4% softirq
+CPU2 states: 20% user 2% system 0% nice 76% idle 0% iowait 0% irq 2% softirq
+CPU3 states: 21% user 0% system 0% nice 79% idle 0% iowait 0% irq 0% softirq
+CPU4 states: 13% user 1% system 0% nice 85% idle 0% iowait 0% irq 1% softirq
+CPU5 states: 22% user 0% system 0% nice 77% idle 0% iowait 0% irq 1% softirq
+CPU6 states: 19% user 1% system 0% nice 80% idle 0% iowait 0% irq 0% softirq
+CPU7 states: 10% user 2% system 0% nice 87% idle 0% iowait 0% irq 1% softirq
+Memory: 3701356k total, 2605816k used (70.4%), 770116k free (20.8%), 325424k freeable (8.8%)
+Average network usage: 66811 / 68087 kbps in 1 minute, 50155 / 52182 kbps in 10 minutes, 50436 / 52248 kbps in 30
+minutes
+Maximal network usage: 168806 / 171305 kbps in 1 minute, 180897 / 182865 kbps in 10 minutes, 180897 / 182865 kbps
+in 30 minutes
+Average sessions: 9267 sessions in 1 minute, 8534 sessions in 10 minutes, 8828 sessions in 30 minutes
+Maximal sessions: 9674 sessions in 1 minute, 9676 sessions in 10 minutes, 10548 sessions in 30 minutes
+Average session setup rate: 68 sessions per second in last 1 minute, 67 sessions per second in last 10 minutes, 67
+ sessions per second in last 30 minutes
+Maximal session setup rate: 133 sessions per second in last 1 minute,
+
+
+Step 4: SSLVPN daemon spawned -> Answer: improves speed

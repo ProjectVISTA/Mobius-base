@@ -1,0 +1,6 @@
+Step 1: Initial Connectivity Check -> Answer: Completed (Bypassed with reason: asdf)
+Step 2: Packet Loss? -> Answer: No
+Step 3: CPU/Memory Check -> Answer: CPU/Memory not high (Bypassed with reason: asdf)
+Step 5: QOS/DOS Policy Check -> Answer: QOS/DOS Policy not causing slow speeds (Bypassed with reason: asdf)
+Step 8: Baseline Speed Testing Without VPN -> Answer: Completed -> Inputs: {'PC Download Speed (Mbps)': 44.0, 'PC Upload Speed (Mbps)': 44.0}
+Step 9: iPerf from FortiGate to Server -> Answer: None -> Inputs: {'FortiGate Download Speed (Mbps)': 44.0, 'FortiGate Upload Speed (Mbps)': 44.0}

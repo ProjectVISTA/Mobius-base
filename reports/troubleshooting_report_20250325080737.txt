@@ -1,0 +1,10 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: Yes
+Step 6: Investigate ISP of PC or FortiGate -> Answer: SSLVPND High (Bypassed with reason: skip)
+Step 4: SSLVPN daemon spawned -> Answer: does not improve speeds
+Step 5: QOS/DOS Policy Check -> Answer: QOS/DOS Policy not causing slow speeds
+Step 7: Baseline Speed Testing Without VPN -> Answer: Completed -> Inputs: {'PC Download Speed (Mbps)': 100.0, 'PC Upload Speed (Mbps)': 100.0}
+Step 8: iPerf from FortiGate to Server -> Answer: Completed -> Inputs: {'FortiGate Download Speed (Mbps)': 100.0, 'FortiGate Upload Speed (Mbps)': 100.0}
+Step 9: Speed Test through the tunnel -> Answer: Completed -> Inputs: {'SSL-VPN Download Speed (Mbps)': 100.0, 'SSL-VPN Upload Speed (Mbps)': 100.0}
+Step 10: Comparison of speed tests -> Answer: proceed
+Step 11: Identify the slow ISP -> Answer: Proceed

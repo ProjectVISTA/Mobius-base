@@ -1,0 +1,13 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: No
+Step 3: CPU/Memory Check -> Answer: CPU/Memory not high (Bypassed with reason: skipping)
+  Command output: 
+sample text output
+sample text output
+sample text output
+sample text output
+sample text output
+sample text output
+
+
+Step 5: QOS/DOS Policy Check -> Answer: QOS/DOS Policy causing slow speeds

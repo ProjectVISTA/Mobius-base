@@ -1,0 +1,5 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: No
+Step 3: CPU/Memory Check -> Answer: SSLVPND High
+Step 4: SSLVPN daemon spawned -> Answer: does not improve speeds
+Step 5: QOS/DOS Policy Check -> Answer: QOS/DOS Policy causing slow speeds

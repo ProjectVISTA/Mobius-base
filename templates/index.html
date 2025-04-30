@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="page-container">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="http://10.21.3.250:8863" class="logo" target="_blank"  title="VISTA Home">🏠 Home</a>
+                <a href="http://10.21.3.250:8000" class="nav-link" target="_blank">📄 Documentation</a>
+            </div>
+        </nav>
+    <div class="container">
+        <h1 class="title">Project Title</h1>
+        
+        <!-- Information message about checkboxes -->
+        <div class="info-box">
+            <p>⚠️ <strong>Important:</strong> Please ensure all checkboxes are checked where applicable. If not, you will be required to provide a bypass reason before proceeding.<br> Also, please ensure that all the data is captured and attached to the ticket.</p>
+        </div>
+
+        <a href="{{ url_for('troubleshoot') }}">
+            <button class="btn">Start Troubleshooting</button>
+        </a>
+    </div>
+    </div>
+</body>
+</html>

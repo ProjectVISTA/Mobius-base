@@ -1,0 +1,22 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: Yes
+Step 6: Investigate ISP of PC or FortiGate -> Answer: CPU/Memory high
+  Command output: 
+FortiGate-80F # get system performance status 
+CPU states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU0 states: 3% user 0% system 0% nice 97% idle 0% iowait 0% irq 0% softirq
+CPU1 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU2 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU3 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU4 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU5 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU6 states: 1% user 0% system 0% nice 99% idle 0% iowait 0% irq 0% softirq
+CPU7 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+Memory: 3806412k total, 2232336k used (58.6%), 1037804k free (27.3%), 536272k freeable (14.1%)
+Average network usage: 82 / 38 kbps in 1 minute, 69 / 17 kbps in 10 minutes, 70 / 17 kbps in 30 minutes
+Maximal network usage: 252 / 222 kbps in 1 minute, 252 / 222 kbps in 10 minutes, 252 / 222 kbps in 30 minutes
+Average sessions: 113 sessions in 1 minute, 113 sessions in 10 minutes, 112 sessions in 30 minutes
+Maximal sessions: 123 sessions in 1 minute, 127 sessions in 10 minutes, 128 sessions in 30 minutes
+Average session setup rate: 1 sessions per second in last 1 minute, 0 sessions per second in last 10 minutes, 0 sessions per second in last 30 minutes
+Maximal session setup rate: 7 sessions per second in last 1 minute, 14 sessions per second in last 10 min
+

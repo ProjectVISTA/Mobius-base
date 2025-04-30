@@ -1,0 +1,292 @@
+/* Reset default styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #ffffff;
+    color: #d32f2f;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container Styling for content */
+.container {
+    padding: 20px;
+    border: 2px solid #d32f2f;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 20px 0;
+}
+
+/* commandBox styling start */
+.commandBox {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-family: monospace;
+    position: relative;
+    text-align: start;
+    white-space: pre-wrap;
+  }
+
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .copy-button:hover {
+    text-decoration: underline;
+  }
+
+  .copy-icon {
+    font-weight: bold;
+    font-size: 14px;
+  }
+/* commandBox styling end */
+
+
+/* Title Styling */
+.title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #d32f2f;
+}
+
+/* Text Area styling*/
+.textinput1 {
+    color: #6a6767;
+    font-family: monospace;
+    height: 6em;
+    width: 100%;
+    max-width: 50em;
+    resize: vertical;
+}
+
+/* Question Text Styling */
+.question {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    text-align:start;
+    align-items: center;
+}
+
+/* Complete message Styling */
+.complete {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: #388e3c;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #d32f2f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 5px;
+    display: inline-block;
+    width: auto;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #b71c1c;
+}
+
+.btn-option {
+    background-color: #d32f2f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-option:hover {
+    background-color: #b71c1c;
+}
+
+/* Input Section */
+.input-section {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.input-box {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 200px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Options container */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Alert container */
+.alert-container {
+    margin: 15px 0;
+}
+
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.alert-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+/* Action buttons container */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-option {
+        width: 100%;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .question {
+        font-size: 1rem;
+    }
+    
+    .input-box {
+        max-width: 100%;
+    }
+}
+
+/* nav bar start*/
+.navbar {
+    width: 100%;
+    background-color: #e31c25;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /*position: sticky;*/
+    top: 0;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.nav-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link, .logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .logo:hover {
+    color: #ffdede;
+}
+/* nav bar end*/
+/* to wrap all in page container in a column*/
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack navbar and content vertically */
+    align-items: center;    /* Optional: center-align content horizontally */
+    width: 85%;
+}

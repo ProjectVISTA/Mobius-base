@@ -1,0 +1,4 @@
+Step 1: Baseline Speed Testing Without VPN -> Answer: Completed -> Inputs: {'PC Download Speed (Mbps)': '200', 'PC Upload Speed (Mbps)': '200'}
+Step 2: iPerf from FortiGate to Server -> Answer: Completed -> Inputs: {'FortiGate Download Speed (Mbps)': '100', 'FortiGate Upload Speed (Mbps)': '100'}
+Step 3: Speed Test through the tunnel -> Answer: Completed -> Inputs: {'SSL-VPN Download Speed (Mbps)': '10', 'SSL-VPN Upload Speed (Mbps)': '10'}
+Step 4: Comparision of speed tests -> Answer: speed drops by more than 30% -> Inputs: {}

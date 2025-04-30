@@ -1,0 +1,3 @@
+Step 1: Initial Connectivity Check -> Answer: Completed
+Step 2: Packet Loss? -> Answer: No
+Step 3: CPU/Memory Check -> Answer: CPU/Memory not high (Bypassed with reason: skipper)
