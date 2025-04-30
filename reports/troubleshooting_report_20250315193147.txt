@@ -1,7 +1,0 @@
-Step 1: Initial Connectivity Check -> Answer: Completed
-Step 2: Packet Loss? -> Answer: No
-Step 4: Baseline Speed Testing Without VPN -> Answer: Completed
-Step 5: iPerf from FortiGate to Server -> Answer: Completed
-Step 6: Speed Test through the tunnel -> Answer: Completed
-Step 7: Comparision of speed tests -> Answer: speed drops by more than 30%
-Step 9: Enable DTLS -> Answer: Performance increased

@@ -1,2 +1,0 @@
-Step 1: Device Status -> Answer: Fortinet Logo not turning on
-   {'hardware platform': 'abc'}

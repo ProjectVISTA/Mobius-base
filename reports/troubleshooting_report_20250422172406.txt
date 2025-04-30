@@ -1,2 +1,0 @@
-Step 1: Initial Connectivity Check -> Answer: Completed (Bypassed with reason: asdf)
-Step 2: Packet Loss? -> Answer: Yes

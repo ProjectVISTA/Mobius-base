@@ -1,0 +1,8 @@
+Step 1: Sample step 1 -> Step 2 (Bypassed with reason: sample skip reason)
+  Command output: 
+sample command output
+
+
+    - Sample dropdown: Option2
+    - sample input field: inline input
+Step 2: Sample step 2 -> Request Swarming

@@ -1,2 +1,0 @@
-Step 1: Initial Connectivity Check -> Answer: Completed
-Step 2: Packet Loss? -> Answer: No

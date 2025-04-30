@@ -1,3 +1,0 @@
-Step 1: Initial Connectivity Check -> Answer: Completed
-Step 2: Packet Loss? -> Answer: Yes
-Step 3: Investigate ISP of PC or FortiGate -> Answer: looped in ISP

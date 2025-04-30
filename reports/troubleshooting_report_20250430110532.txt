@@ -1,4 +1,0 @@
-Step 1: Sample step 1 -> Step 2 (Bypassed with reason: asfd)
-    - Sample dropdown - html name and ID: Option2
-    - html name: input
-Step 2: Sample step 2 -> Request Swarming

@@ -1,4 +1,0 @@
-Step 1: Initial Connectivity Check -> Answer: Proecced
-Step 2: Packet Loss? -> Answer: No
-Step 2: Packet Loss? -> Answer: No
-Step 4: Baseline Speed Testing Without VPN -> Answer: Proceed
