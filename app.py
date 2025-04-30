@@ -100,8 +100,6 @@ What is the present status of the device? Select the option best applicable:
     {
         "step": "Sample step 2",
         "question": f''' 
-Sample text input2:
-{text_area_html}
 
 What happened leading up to the issue? Explain in as much detail as possible.
 {text_area_html}
