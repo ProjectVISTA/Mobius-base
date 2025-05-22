@@ -39,36 +39,41 @@ def dropdown(name, text, options):
 
 checkbox_html = '<input type="checkbox" name="checkboxes" class="required-checkbox" style="width: 20px; height: 20px; accent-color: red; border: 2px solid black; border-radius: 4px; margin: 5px;">'
 text_area_html = '<br><textarea maxlength="1500" name="textinput1" class="textinput1" id="textinput1" placeholder="Please enter the output for the above commands here (Optional - max 1500 Chars)"></textarea>'
-debug_start = '''
-<span id="copyText" class=commandBox
-      style="background-color:#f0f0f0; color:#333; padding:8px 12px; border-radius:6px; cursor:pointer; display:inline-block; font-family:monospace; text-align:start"
-      onclick="copyToClipboard()">
-<small>Click the debug box to copy the contents to Clipboard</small>
-'''
-debug_end = '''
-</span>
-<script>
-  function copyToClipboard() {
-    const text = document.getElementById('copyText').innerText;
+debug_start = '''<div class="debug-container" onclick="copyToClipboard(this)">
+  <small>Click the debug box to copy to Clipboard</small>
+  <pre class="debug-commands" style="background-color:#f0f0f0; color:#333; padding:8px 12px; border-radius:6px; cursor:pointer; display:inline-block; font-family:monospace; text-align:start">'''
+debug_end = '''</pre></div><!-- Snackbar Container --><div id="snackbar" style="visibility: hidden; min-width: 200px; background-color: #333; color: #fff; text-align: center; border-radius: 4px; padding: 8px; position: fixed; top: 20px; right: 20px; z-index: 1000; font-size: 14px;">Copied to clipboard!
+</div><script>
+  function copyToClipboard(container) {
+    const commandText = container.querySelector('.debug-commands').innerText;
 
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert('Copied!');
+      navigator.clipboard.writeText(commandText).then(() => {
+        showSnackbar();
       }).catch(err => {
         alert('Failed to copy: ' + err);
       });
     } else {
       const textarea = document.createElement('textarea');
-      textarea.value = text;
+      textarea.value = commandText;
       document.body.appendChild(textarea);
       textarea.select();
       document.execCommand('copy');
       document.body.removeChild(textarea);
-      alert('Copied!');
+      showSnackbar();
     }
   }
-</script>
-'''
+
+  function showSnackbar() {
+    const snackbar = document.getElementById("snackbar");
+    snackbar.style.visibility = "visible";
+    snackbar.style.opacity = "1";
+    setTimeout(() => {
+      snackbar.style.opacity = "0";
+      setTimeout(() => snackbar.style.visibility = "hidden", 300);
+    }, 3000);
+  }
+</script>'''
 # Troubleshooting steps with specific messages for 'Yes'/'No' responses
 troubleshooting_steps = [
 

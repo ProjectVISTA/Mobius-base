@@ -8,12 +8,37 @@
 </head>
 <body>
     <div class="page-container">
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="http://10.21.3.250:8863" class="logo" target="_blank"  title="VISTA Home">🏠 Home</a>
-                <a href="http://10.21.3.250:8000" class="nav-link" target="_blank">📄 Documentation</a>
-            </div>
-        </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="http://10.128.202.246:8863" class="logo" target="_blank"  title="VISTA Home">🏠 Home</a>
+            <a href="http://10.128.202.246:8000" class="nav-link" target="_blank">📄 Documentation</a>
+            <div class="dropdown">
+                <button class="dropbtn">🛠 Tools ▼</button>
+                <div class="dropdown-content">
+                  <div class="dropdown-group">
+                    <a href="http://10.128.202.246:8864/" target="_blank"><b>MOBIUS SPEED TEST</b></a>
+                    <div class="sub-links">
+                      <a href="http://10.128.202.246:8866/" target="_blank">SSL VPN slow Internet</a>
+                      <a href="http://10.128.202.246:8867/" target="_blank">SSL VPN slow data transfer</a>
+                      <a href="http://10.128.202.246:8869/" target="_blank">S2S IPSEC slow Speeds</a>
+                      <a href="http://10.128.202.246:8868/" target="_blank">LAN Slow Speed</a>
+                      <a href="http://10.128.202.246:8873/" target="_blank">Dialup IPSEC Slowness: Internet</a>
+                      <a href="http://10.128.202.246:8874/" target="_blank">Dial Up IPsec: Data Transfer to FGT LAN</a>
+                    </div>
+                  </div>
+                  <div class="dropdown-group">
+                    <a href="http://10.128.202.246:8870/" target="_blank"><b>NP Troubleshooter</b></a>
+                    <div class="sub-links">
+                      <a href="http://10.128.202.246:8870/" target="_blank">NP7</a>
+                      <a href="http://10.128.202.246:8871/" target="_blank">NP6</a>
+                      <a href="http://10.128.202.246:8872/" target="_blank">NP6XLite</a>
+                    </div>
+                  </div>
+                  <a href="http://10.128.202.246:8888/" target="_blank"><b>IKE DEBUGGER TOOL</b></a>
+                </div>
+              </div>               
+        </div>
+    </nav>
     <div class="container">
         <h1 class="title">Project Title</h1>
         
@@ -21,11 +46,28 @@
         <div class="info-box">
             <p>⚠️ <strong>Important:</strong> Please ensure all checkboxes are checked where applicable. If not, you will be required to provide a bypass reason before proceeding.<br> Also, please ensure that all the data is captured and attached to the ticket.</p>
         </div>
-
-        <a href="{{ url_for('troubleshoot') }}">
-            <button class="btn">Start Troubleshooting</button>
-        </a>
-    </div>
-    </div>
-</body>
-</html>
+        <br>
+        <form method="POST" action="{{ url_for('troubleshoot') }}" onsubmit="return validateForm()">
+            <label for="ticket_id">Ticket ID:</label>
+            <input type="text" name="ticket_id" id="ticket_id" required pattern="(1\d{7})|LAB" title="Ticket ID must be valid">
+            <br>
+            <label>If no ticket number is associated, enter 'LAB'</label>
+            <br><br>
+            <button class="btn" type="submit">Start Troubleshooting</button>
+        </form>
+        <script>
+            function validateForm() {
+                const ticketId = document.getElementById("ticket_id").value;
+                const pattern = /(^1\d{7}$)|(LAB)/;
+                if (!pattern.test(ticketId)) {
+                    alert("Please provide a valid ticket ID.");
+                    return false;
+                }
+                return true;
+            }
+            </script>
+        </div>
+        </div>
+        </div>
+    </body>
+    </html>
