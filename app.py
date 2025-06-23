@@ -138,7 +138,7 @@ def troubleshoot():
             if current_step > 0:
                 session["current_step"] -= 1
                 session["current_question"] = troubleshooting_steps[session["current_step"]]["question"]
-            return redirect(url_for("troubleshoot"))
+            return redirect(url_for("main.troubleshoot"))
         
         checked_boxes = request.form.getlist("checkboxes")
         bypass_reason = request.form.get("bypass_reason", "").strip()
@@ -146,7 +146,7 @@ def troubleshoot():
         
         if len(checked_boxes) < troubleshooting_steps[current_step]["question"].count("name=\"checkboxes\"") and not bypass_reason:
             flash("Please check all required checkboxes or provide a bypass reason.", "error")
-            return redirect(url_for("troubleshoot"))
+            return redirect(url_for("main.troubleshoot"))
         
         input_values = {}
         # Collect all input fields from the form
@@ -156,12 +156,12 @@ def troubleshoot():
                 value = request.form.get(key)
                 if not value:
                     flash(f"Please fill in all required fields before proceeding.")
-                    return redirect(url_for("troubleshoot"))
+                    return redirect(url_for("main.troubleshoot"))
                 try:
                     input_values[key] = str(value)
                 except ValueError:
                     flash(f"Please enter a valid number for {key}", "error")
-                    return redirect(url_for("troubleshoot"))
+                    return redirect(url_for("main.troubleshoot"))
                 
         step_report = f"Step {current_step+1}: {troubleshooting_steps[current_step]['step']} -> {choice}"
         if bypass_reason:
@@ -177,7 +177,7 @@ def troubleshoot():
             value = request.form.get(field)
             if not value:
                 flash("Please fill in all required fields before proceeding.", "error")
-                return redirect(url_for("troubleshoot"))
+                return redirect(url_for("main.troubleshoot"))
             step_inputs[field] = float(value)
         
         if step_inputs:
