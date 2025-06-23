@@ -47,7 +47,7 @@
             <p>⚠️ <strong>Important:</strong> Please ensure all checkboxes are checked where applicable. If not, you will be required to provide a bypass reason before proceeding.<br> Also, please ensure that all the data is captured and attached to the ticket.</p>
         </div>
         <br>
-        <form method="POST" action="{{ url_for('troubleshoot') }}" onsubmit="return validateForm()">
+        <form method="POST" action="{{ url_for('main.troubleshoot') }}" onsubmit="return validateForm()">
             <label for="ticket_id">Ticket ID:</label>
             <input type="text" name="ticket_id" id="ticket_id" required pattern="(1\d{7})|LAB" title="Ticket ID must be valid">
             <br>

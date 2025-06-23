@@ -218,7 +218,7 @@
             {% endif %}
         {% endwith %}
 
-        <form id="troubleshoot-form" method="POST">
+        <form id="troubleshoot-form" method="POST" action="{{ url_for('main.troubleshoot') }}">
             {% if session["current_step"] == -1 %}
                 <h2 class="complete">Troubleshooting complete.</h2>
             {% else %}
@@ -245,7 +245,7 @@
             {% endif %}
         </form>
 
-        <a href="{{ url_for('download_report') }}">
+        <a href="{{ url_for('main.download_report') }}">
             <button class="btn download">Download Report</button>
         </a>
 

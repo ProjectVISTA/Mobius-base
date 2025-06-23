@@ -1,9 +1,16 @@
-from flask import Flask, render_template, request, redirect, url_for, session, send_file , flash
+from flask import Flask, render_template, request, redirect, url_for, session, send_file, flash, Blueprint
+from dotenv import load_dotenv
 import os
 import datetime
 
+load_dotenv()
+
+APP_ROOT = os.environ.get("APP_ROOT", "")  # Set to '/dummy-app' in prod, '' in dev
+
 app = Flask(__name__)
 app.secret_key = "fortinet"  # Change this to a secure key
+
+main_bp = Blueprint('main', __name__, url_prefix=APP_ROOT)
 
 REPORTS_DIR = "reports"
 os.makedirs(REPORTS_DIR, exist_ok=True)
@@ -116,12 +123,12 @@ What happened leading up to the issue? Explain in as much detail as possible.
     },
 ]
 
-@app.route("/", methods=["GET", "POST"])
+@main_bp.route("/", methods=["GET", "POST"])
 def index():
     session.clear()
     return render_template("index.html")
 
-@app.route("/troubleshoot", methods=["GET", "POST"])
+@main_bp.route("/troubleshoot", methods=["GET", "POST"])
 def troubleshoot():
     if request.method == "POST":
         choice = request.form.get("choice")
@@ -212,7 +219,7 @@ def troubleshoot():
 
     return render_template("troubleshoot.html", question=session["current_question"], options=options, info=info, input_fields=input_fields, stored_inputs=session.get("inputs", {}), show_back=session.get("current_step", 0) > 0, messages=list(session.pop("_flashes", [])))
 
-@app.route("/download_report")
+@main_bp.route("/download_report")
 def download_report():
     filename = f"troubleshooting_report_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}.txt"
     filepath = os.path.join(REPORTS_DIR, filename)
@@ -221,6 +228,8 @@ def download_report():
         f.write("\n".join(session.get("report", [])))
     
     return send_file(filepath, as_attachment=True)
+
+app.register_blueprint(main_bp)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8900)
