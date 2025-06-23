@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session, send_file, flash, Blueprint
 from dotenv import load_dotenv
+load_dotenv()
 import os
 import datetime
 
-load_dotenv()
-
 APP_ROOT = os.environ.get("APP_ROOT", "")  # Set to '/dummy-app' in prod, '' in dev
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path=f"{APP_ROOT}/static")
 app.secret_key = "fortinet"  # Change this to a secure key
 
 main_bp = Blueprint('main', __name__, url_prefix=APP_ROOT)
